@@ -1,7 +1,4 @@
-def garden_operations(e):
-    """
-    This function generate error cases
-    """
+def garden_operations(e: type) -> None:
     if e == ValueError:
         print(int("abc"))
     elif e == ZeroDivisionError:
@@ -17,10 +14,7 @@ def garden_operations(e):
         print(dictionary["Name"])
 
 
-def test_error_types():
-    """
-    This function test a different cases
-    """
+def test_error_types() -> None:
     try:
         print("Testing ValueError...")
         garden_operations(ValueError)

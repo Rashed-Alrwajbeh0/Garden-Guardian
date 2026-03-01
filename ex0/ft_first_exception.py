@@ -1,24 +1,21 @@
-def check_temperature(temp_str: str):
-    """
-    This function check the temperature and if the temperature is less than 0
-    or more than 40 or the temperature not a number it return an Error
-    """
+def check_temperature(temp_str: str) -> None | int:
     try:
-        num = int(temp_str)
+        num: int = int(temp_str)
         if num < 0:
             print(f"Error: {num}°C is too cold for plants (min 0°C)")
+            return None
         elif num > 40:
             print(f"Error: {num}°C is too hot for plants (max 40°C)")
+            return None
         else:
             print(f"Temperature {num}°C is perfect for plants!")
+            return num
     except ValueError:
         print(f"Error: ’{temp_str}’ is not a valid number")
+        return None
 
 
-def test_temperature_input():
-    """
-    This function test a different cases
-    """
+def test_temperature_input() -> None:
     print("Testing temperature: 25")
     check_temperature("25")
     print("\nTesting temperature: abc")

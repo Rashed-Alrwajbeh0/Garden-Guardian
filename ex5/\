@@ -21,7 +21,7 @@ class GardenManager:
     def __init__(self) -> None:
         self.plant_list: list[Plant] = []
         self.water_level = 100
-
+    
     def add_plant(self, name: str, water: int, sun: int) -> None:
         try:
             if name == "":
@@ -53,7 +53,7 @@ class GardenManager:
             if plant.name is None:
                 raise PlantError(f"Error : Watering {plant.name}.")
             water: int = plant.water
-            sun: int = plant.sun
+            sun: int =  plant.sun
             if water < 1:
                 raise WaterError(f"Water level {water} is too low (min 1)")
             if water > 10:
@@ -89,6 +89,7 @@ def test_garden_management() -> None:
         print("System recovered and continuing...")
     print("\nGarden management system test complete!")
 
-
 if __name__ == "__main__":
     test_garden_management()
+
+        

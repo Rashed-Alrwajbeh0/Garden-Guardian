@@ -1,7 +1,4 @@
-def water_plants(plant_list):
-    """
-    This function to wanter the plants in plant_list
-    """
+def water_plants(plant_list: list) -> None:
     print("Opening watering system")
     try:
         for plant in plant_list:
@@ -13,10 +10,7 @@ def water_plants(plant_list):
         print("Closing watering system (cleanup)")
 
 
-def test_watering_system():
-    """
-    Test a different cases
-    """
+def test_watering_system() -> None:
     print("Testing normal watering...")
     water_plants(["tomato", "lettuce", "carrots"])
     print("Watering completed successfully!\n")

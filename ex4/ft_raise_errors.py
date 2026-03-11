@@ -1,24 +1,24 @@
-class GardenError(Exception): 
+class GardenError(Exception):
     pass
 
 
-class PlantError(GardenError): 
+class PlantError(GardenError):
     pass
 
 
-class WaterError(GardenError): 
+class WaterError(GardenError):
     pass
 
 
 def check_plant_health(plant_name: str, water_level: int,
                        sunlight_hours: int) -> None:
-    all_done: int = 1
+    all_done = 1
     try:
         if plant_name == "":
             raise GardenError("Error: Plant name cannot be empty!")
 
         if water_level > 10:
-            raise WaterError(f"Error: Water level {water_level}" 
+            raise WaterError(f"Error: Water level {water_level}"
                              " is too high (max 10)")
         elif water_level < 1:
             raise WaterError(f"Error: Water level {water_level}"
@@ -36,6 +36,7 @@ def check_plant_health(plant_name: str, water_level: int,
 
     if all_done == 1:
         print(f"Plant '{plant_name}' is healthy!")
+
 
 def test_plant_checks() -> None:
     print("Testing good values...")

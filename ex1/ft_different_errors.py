@@ -1,17 +1,19 @@
 def garden_operations(e: type) -> None:
     if e == ValueError:
-        print(int("abc"))
+        for c in 'abc':
+            if c > '9' or c < '0':
+                raise ValueError('invalid literal for int()')
     elif e == ZeroDivisionError:
         print(1/0)
     elif e == FileNotFoundError:
-        file = open("test.txt", "r")
+        file = open("missing.txt", "r")
         file.close()
     elif e == KeyError:
         dictionary = {
             "name": "Rashed",
             "age": 18
                 }
-        print(dictionary["Name"])
+        print(dictionary["missing_plant"])
 
 
 def test_error_types() -> None:

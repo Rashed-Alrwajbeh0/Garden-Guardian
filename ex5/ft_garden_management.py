@@ -11,7 +11,7 @@ class WaterError(GardenError):
 
 
 class Plant:
-    def __init__(self, name: str, water: int, sun: int):
+    def __init__(self, name: str, water: int, sun: int) -> None:
         self.water: int = water
         self.sun: int = sun
         self.name: str = name
